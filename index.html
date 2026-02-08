@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StudyFlow - Smart Exam Planner</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'navy-blue': '#0A1128', // Dark blue for text or accents
+                        'dark-navy': '#0E1730', // Slightly lighter dark blue
+                        'gold-accent': '#FFD700', // Primary accent gold
+                        'light-gold': '#FFEB84', // Lighter gold for hover states
+                        'gray-text': '#A0AEC0', // Soft gray for general text
+                        'dark-bg-700': '#2D3748', // Dark gray for secondary backgrounds/borders
+                        'dark-bg-800': '#1A202C', // Darker gray for component backgrounds
+                        'dark-bg-900': '#10151C', // Very dark gray for navigation/footer
+                        'dark-bg-950': '#0C0F16', // Custom very dark navy for primary background
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom Scrollbar for Chat */
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #1A202C; /* dark-bg-800 */
+            border-radius: 10px;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #4A5568; /* a darker gray */
+            border-radius: 10px;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+            background: #6B7280; /* a slightly lighter gray on hover */
+        }
+    </style>
+<script type="importmap">
+{
+  "imports": {
+    "react/": "https://esm.sh/react@^19.2.4/",
+    "react": "https://esm.sh/react@^19.2.4",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
+    "react/jsx-runtime": "https://esm.sh/react@^19.2.4/jsx-runtime",
+    "@google/genai": "https://esm.sh/@google/genai@^1.40.0",
+    // Map local files through esm.sh for transpilation
+    // The "?dev" flag is often useful for browser debugging with esm.sh.
+    "./App": "https://esm.sh/./App.tsx?dev",
+    "./types": "https://esm.sh/./types.ts?dev",
+    "./constants": "https://esm.sh/./constants.tsx?dev",
+    "./components/Button": "https://esm.sh/./components/Button.tsx?dev",
+    "./components/Input": "https://esm.sh/./components/Input.tsx?dev",
+    "./components/Textarea": "https://esm.sh/./components/Textarea.tsx?dev",
+    "./components/LoadingSpinner": "https://esm.sh/./components/LoadingSpinner.tsx?dev",
+    "./components/Navbar": "https://esm.sh/./components/Navbar.tsx?dev",
+    "./services/geminiService": "https://esm.sh/./services/geminiService.ts?dev"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+<body class="bg-dark-bg-950 text-gray-100 min-h-screen font-sans">
+    <div id="root"></div>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <script type="module" src="https://esm.sh/./index.tsx?dev"></script>
+<script type="module" src="/index.tsx"></script>
+</body>
+</html>
