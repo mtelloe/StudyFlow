@@ -1,11 +1,10 @@
-import { GoogleGenAI, Type, GenerateContentResponse, Chat } from "@google/genai";
-import { StudyPlanEntry, Flashcard, QuizQuestion, ChatMessage } from "../types";
+import { GoogleGenerativeAI, Type, GenerateContentResponse, Chat } from "@google/generative-ai";import { StudyPlanEntry, Flashcard, QuizQuestion, ChatMessage } from "../types";
 // Corrected import path for constants.tsx to ensure esm.sh resolves it
 import { GEMINI_PRO_MODEL, GEMINI_FLASH_MODEL } from "../constants.tsx";
 
 // Fix: Initialize GoogleGenAI as per guidelines. API_KEY is expected to be present.
 // The warning for process.env.API_KEY can remain.
-const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
+const ai = new GoogleGenerativeAI({ apiKey: process.env.API_KEY });
 
 if (!process.env.API_KEY) {
   console.warn("API_KEY environment variable is not set. Gemini API calls may fail.");
